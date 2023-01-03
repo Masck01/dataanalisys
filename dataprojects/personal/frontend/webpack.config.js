@@ -1,8 +1,5 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 const WebpackBundleTracker = require("webpack-bundle-tracker");
-const Webpack = require('webpack')
 
 module.exports = {
 
@@ -20,16 +17,8 @@ module.exports = {
                 exclude: /(node_modules|bower_modules)/,
                 use: ["style-loader", "css-loader"]
             },
-            // {
-            //     test:/\.svg$/i,
-            //     issuer: /\.[jt]sx?$/,
-            //     use:["@svgr/webpack"],
-            //     // type:"asset/inline"
-            // },
             {
                 test: /\.svg$/i,
-                // issuer: /\.[jt]sx?$/,
-                // use:["@svgr/webpack"],
                 type: "asset/inline"
             },
             {
@@ -46,33 +35,24 @@ module.exports = {
         path: path.resolve(__dirname, "dist"),
         filename: "main.js",
         assetModuleFilename: "[hash][ext]",
-        clean:true,
+        clean: true,
 
     },
     devServer: {
-        // open: true,
         port: 5000,
         hot: true,
-        headers:{"Access-Control-Allow-Origin":'*'},
-        // historyApiFallback:true,
-        liveReload:true,
+        headers: { "Access-Control-Allow-Origin": '*' },
+        liveReload: true,
         devMiddleware: {
-            writeToDisk:true,
+            writeToDisk: true,
             publicPath: "http://localhost:5000/dist/",
-            // serverSideRender: true
         }
     },
     plugins:
         [
-            // new HtmlWebpackPlugin({
-            //     template: path.resolve("public","index.html")
-            // }),
             new WebpackBundleTracker({
                 filename: "./webpack-stats.json"
             }),
-            // new Webpack.optimize.LimitChunkCountPlugin({
-            //     maxChunks:1
-            // }) 
         ]
 
 
