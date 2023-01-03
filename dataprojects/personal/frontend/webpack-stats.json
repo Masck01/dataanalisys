@@ -1,0 +1,26 @@
+{
+  "status": "done",
+  "assets": {
+    "131.main.js": {
+      "name": "131.main.js",
+      "path": "/workspaces/talenty/dataprojects/personal/frontend/dist/131.main.js"
+    },
+    "64b6abdbeb9a1690d34c.png": {
+      "name": "64b6abdbeb9a1690d34c.png",
+      "path": "/workspaces/talenty/dataprojects/personal/frontend/dist/64b6abdbeb9a1690d34c.png"
+    },
+    "main.js": {
+      "name": "main.js",
+      "path": "/workspaces/talenty/dataprojects/personal/frontend/dist/main.js"
+    },
+    "main.js.LICENSE.txt": {
+      "name": "main.js.LICENSE.txt",
+      "path": "/workspaces/talenty/dataprojects/personal/frontend/dist/main.js.LICENSE.txt"
+    }
+  },
+  "chunks": {
+    "main": [
+      "main.js"
+    ]
+  }
+}

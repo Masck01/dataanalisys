@@ -119,7 +119,22 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [BASE_DIR / "personal"/"frontend"/"dist"]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Webpack Loader configuration
+
+WEBPACK_LOADER = {
+    "DEFAULT":{
+        "BUNDLE_DIR_NAME":"",
+        "CACHE": not DEBUG,
+        "STATS_FILE": BASE_DIR /"personal"/ "frontend"/"webpack-stats.json",
+        "POLL_INTERVAL": 0.1,
+        "IGNORE": [r'.+\.hot-update.js', r'.+\.map']
+    }
+}
